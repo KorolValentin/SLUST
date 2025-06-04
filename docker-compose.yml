@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: slust_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./laravel:/var/www
+    networks:
+      - slust_project
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:alpine
+    container_name: slust_nginx
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - ./laravel:/var/www
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - slust_project
+    depends_on:
+      - app
+
+  db:
+    image: postgres:14
+    container_name: slust_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - slust_project
+
+volumes:
+  postgres_data:
+
+networks:
+  slust_project:
+    driver: bridge
