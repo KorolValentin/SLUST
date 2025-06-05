@@ -20,7 +20,6 @@ return new class extends Migration
             $table->integer('priority')->default(0);
             $table->enum('status', ['todo', 'in_progress', 'done', 'canceled'])->default('todo');
             $table->date('due_date')->nullable();
-            $table->foreignId('created_by')->constrained('users');
             $table->timestamps();
         });
     }
