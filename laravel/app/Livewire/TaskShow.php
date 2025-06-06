@@ -3,19 +3,19 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Task as TaskModel;
+use App\Models\Task as Task;
 
-class Task extends Component
+class TaskShow extends Component
 {
     public $task;
 
     public function mount($id)
     {
-        $this->task = TaskModel::find($id);
+        $this->task = Task::find($id);
     }
 
     public function render()
     {
-        return view('livewire.task');
+        return view('livewire.task-show');
     }
 }

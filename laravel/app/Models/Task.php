@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    /** @use HasFactory<\Database\Factories\TaskFactory> */
     use HasFactory;
+
+    /** @use HasFactory<\Database\Factories\TaskFactory> */
+
+    protected $fillable = [
+        'project_id',
+        'title',
+        'description',
+        'priority',
+        'status',
+        'due_date'
+    ];
 }

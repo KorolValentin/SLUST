@@ -52,6 +52,39 @@
             ul.quest-list li:hover {
                 background: rgba(129, 140, 248, 0.1);
             }
+
+            form input,
+            form textarea,
+            form select,
+            form button {
+                display: block;
+                width: 100%;
+                margin-bottom: 12px;
+                padding: 10px;
+                font-size: 1rem;
+                border: 1px solid #444;
+                border-radius: 6px;
+                background: #fff;
+                color: #000;
+            }
+
+            form button {
+                background: #4f46e5;
+                color: #fff;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            form button:hover {
+                background: #4338ca;
+            }
+
+            form div {
+                color: #f87171;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
         </style>
     </head>
     <body>
