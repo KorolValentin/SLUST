@@ -20,7 +20,7 @@
                 box-shadow: 0 0 20px #6366f1;
                 padding: 1.5rem;
                 border-radius: 12px;
-                max-width: 600px;
+                max-width: 1200px;
                 margin: auto;
                 background: linear-gradient(145deg, #0d0d1a, #13132a);
             }
@@ -28,6 +28,14 @@
             .panel h2 {
                 color: #c4b5fd;
                 font-size: 2rem;
+                text-align: center;
+                margin-bottom: 1rem;
+                text-shadow: 0 0 10px #8b5cf6;
+            }
+
+            .panel h3 {
+                color: #c4b5fd;
+                font-size: 1rem;
                 text-align: center;
                 margin-bottom: 1rem;
                 text-shadow: 0 0 10px #8b5cf6;
@@ -86,6 +94,7 @@
                 margin-bottom: 10px;
             }
         </style>
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
         {{ $slot }}

@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Task as Task;
+use App\Models\Task;
 
 class TaskShow extends Component
 {

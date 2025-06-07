@@ -19,4 +19,9 @@ class Task extends Model
         'status',
         'due_date'
     ];
+
+    public function timeable()
+    {
+        return $this->morphMany(TimeLog::class, 'timeable');
+    }
 }
